@@ -5,9 +5,16 @@ No issue tracker was configured for this repo, so wayfinder is using its
 
 ## Layout
 
-- `map.md` — the single map issue (label `wayfinder:map`). The low-resolution
-  index of the whole effort. Loaded once per session.
-- `tickets/NNN-slug.md` — one file per child ticket. `NNN` is the ticket id.
+- `map.md` / `map-<effort>.md` — one file per map issue (label `wayfinder:map`).
+  Each is the low-resolution index of one effort, loaded once per session.
+  There can be more than one map over a repo's lifetime — a redrawn destination
+  (e.g. scope that was ruled out-of-scope on an earlier, completed map)
+  starts a **fresh** map file rather than reopening the old one.
+- `tickets/NNN-slug.md` — one file per child ticket. `NNN` is the ticket id,
+  unique per map. When a repo has multiple maps, later maps prefix their
+  ticket ids/filenames with a short effort tag (e.g. `stanford-001-slug.md`)
+  so ids never collide across maps. A ticket's `parent` field names its map
+  file (without `.md`).
 
 ## Ticket frontmatter
 
