@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Downloaded course materials (produced by the skill at runtime)
+courses/
+
+# Tooling / editor
+.code-review-graph/
+.DS_Store
